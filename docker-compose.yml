@@ -50,10 +50,10 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/food_manager}
       - MONGODB_READONLY=${MONGODB_READONLY:-false}
-      - MCP_MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/food_manager}
       - MCP_MONGODB_READONLY=${MONGODB_READONLY:-false}
+      - MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/item_manager}
+      - MCP_MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/item_manager}
     command: uvx mcpo --host 0.0.0.0 --port 8000 -- npx -y mcp-mongo-server
     networks:
       - webui-network
