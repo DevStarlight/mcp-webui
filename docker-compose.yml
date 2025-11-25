@@ -11,6 +11,8 @@ services:
     environment:
       - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
       - OPENAPI_SERVERS=http://mcp:8000
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY:-}
+      - ELEVENLABS_API_BASE_URL=${ELEVENLABS_API_BASE_URL:-https://api.elevenlabs.io/v1}
     networks:
       - webui-network
     depends_on:

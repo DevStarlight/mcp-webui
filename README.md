@@ -89,6 +89,8 @@ See `env.template` for all available variables. Key variables:
 - `MONGODB_URI`: MongoDB connection string
 - `MONGODB_READONLY`: Read-only mode (false = read/write, true = read-only)
 - `CLOUDFLARE_TUNNEL_TOKEN`: Cloudflare Tunnel token (optional)
+- `ELEVENLABS_API_KEY`: ElevenLabs API key for TTS (optional)
+- `ELEVENLABS_API_BASE_URL`: ElevenLabs API base URL (optional, default: `https://api.elevenlabs.io/v1`)
 
 ### Ollama Cloud Models
 
@@ -103,6 +105,27 @@ To use Ollama Cloud models (e.g., `gpt-oss:120b-cloud`), configure them directly
 3. Save the configuration
 
 **Note**: Local models use the default Ollama connection (`http://host.docker.internal:11434` or `http://ollama:11434`), while cloud models use the `https://ollama.com` connection.
+
+### ElevenLabs Text-to-Speech (Optional)
+
+To enable ElevenLabs TTS for voice synthesis:
+
+1. Get your API key from: https://elevenlabs.io/app/settings/api-keys
+2. Configure in `.env`:
+   ```bash
+   ELEVENLABS_API_KEY=your_api_key_here
+   ELEVENLABS_API_BASE_URL=https://api.elevenlabs.io/v1
+   ```
+   For EU residency, use: `https://api.eu.residency.elevenlabs.io/v1`
+3. Restart the service:
+   ```bash
+   docker-compose restart open-webui
+   ```
+4. In Open WebUI, go to **Settings** → **Audio** → **Text-to-Speech** and select **ElevenLabs** as the TTS engine.
+
+**Recommended models for Spanish:**
+- **Model**: `eleven_v3` (supports 70+ languages including Spanish with emotional control)
+- **Voices**: Antoni, Bella, Rachel, Domi (among others)
 
 ### Cloudflare Tunnel Setup
 
