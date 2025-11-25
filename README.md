@@ -34,16 +34,16 @@ docker-compose --profile ollama --profile cloudflared up -d
 #### PC with GPU (NVIDIA)
 ```bash
 # Basic: Open WebUI + MCP only
-docker-compose -f docker-compose.gpu.yml up -d
+docker-compose -f docker-compose-gpu.yml up -d
 
 # With Ollama as Docker container (optional)
-docker-compose -f docker-compose.gpu.yml --profile ollama up -d
+docker-compose -f docker-compose-gpu.yml --profile ollama up -d
 
 # With Cloudflare Tunnel (optional)
-docker-compose -f docker-compose.gpu.yml --profile cloudflared up -d
+docker-compose -f docker-compose-gpu.yml --profile cloudflared up -d
 
 # With both Ollama and Cloudflare
-docker-compose -f docker-compose.gpu.yml --profile ollama --profile cloudflared up -d
+docker-compose -f docker-compose-gpu.yml --profile ollama --profile cloudflared up -d
 ```
 
 **💡 If Ollama is installed on host:**
@@ -59,7 +59,7 @@ docker-compose -f docker-compose.gpu.yml --profile ollama --profile cloudflared 
 ### open-webui
 - **Port**: 3000
 - **Version**: 0.6.38
-- **GPU**: Enabled in `docker-compose.gpu.yml`, disabled in `docker-compose.yml`
+- **GPU**: Enabled in `docker-compose-gpu.yml`, disabled in `docker-compose.yml`
 
 ### mcp
 - **Port**: 8000
@@ -152,7 +152,7 @@ To enable ElevenLabs TTS for voice synthesis:
 ```
 .
 ├── docker-compose.yml          # For Raspberry Pi (no GPU)
-├── docker-compose.gpu.yml       # For PC with GPU
+├── docker-compose-gpu.yml       # For PC with GPU
 ├── env.template                # Environment variables template
 ├── mcp/                        # MCP Proxy service
 │   └── Dockerfile
