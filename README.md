@@ -2,6 +2,10 @@
 
 Open WebUI integration with MCP (Model Context Protocol) to manage MongoDB data through a proxy.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Quick Start
 
 ### 1. Initial Setup
