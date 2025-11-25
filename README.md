@@ -2,10 +2,6 @@
 
 Open WebUI integration with MCP (Model Context Protocol) to manage MongoDB data through a proxy.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Quick Start
 
 ### 1. Initial Setup
@@ -168,3 +164,7 @@ When using the `ollama` profile, models are downloaded automatically on containe
 - `mistral` - Good performance
 - `qwen2.5` - Excellent for Spanish
 - `phi3` - Small and fast
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
